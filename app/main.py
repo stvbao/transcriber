@@ -38,7 +38,7 @@ LANGUAGES = {
 }
 
 EXPORT_FORMATS = ["all", "txt", "srt", "vtt", "webvtt", "json", "html", "rttm"]
-DEVICES        = ["auto", "mlx", "cpu", "cuda"]
+DEVICES        = ["auto", "mlx", "cpu", "gpu"]
 MODELS         = [
     "large-v3-turbo", "large-v3", "large-v2",
     "large", "medium", "small", "base", "tiny",
@@ -320,7 +320,7 @@ class Worker(QThread):
                 cmd += ["--model", model]
             # --subtitle forces WhisperX (needs k2) which breaks on Windows CPU.
             # Only use it for MLX and CUDA where WhisperX works reliably.
-            if export in {"all", "srt", "vtt", "webvtt"} and device in {"mlx", "cuda"}:
+            if export in {"all", "srt", "vtt", "webvtt"} and device in {"mlx", "gpu"}:
                 cmd += ["--subtitle", "--subtitle_length", "5"]
             if translate:
                 cmd.append("--translate")
