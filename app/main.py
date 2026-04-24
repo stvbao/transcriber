@@ -725,9 +725,10 @@ class MainWindow(QMainWindow):
 
         self._log(msg)
 
-        # Start pulsing after model fetch completes or when processing begins
+        # Start pulsing after model fetch completes or when whisply signals it's
+        # about to transcribe ("Using X with model Y" appears right before transcription)
         if self.worker and self.worker.isRunning():
-            if ("Fetching" in msg and "100%" in msg) or "Processing" in msg:
+            if ("Fetching" in msg and "100%" in msg) or "Using" in msg:
                 self._silence_timer.start()
 
     def _start_pulsing(self):
