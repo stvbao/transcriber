@@ -2,6 +2,7 @@ import sys
 import os
 import subprocess
 import shutil
+import tempfile
 from pathlib import Path
 from datetime import datetime
 from time import perf_counter
@@ -300,9 +301,15 @@ class Worker(QThread):
             file_start         = perf_counter()
             transcriptions_dir = output_folder
 
+            # Copy to a temp directory with a simple path to avoid Windows
+            # file-locking and permission issues with paths containing spaces.
+            tmp_dir  = Path(tempfile.mkdtemp())
+            tmp_file = tmp_dir / file.name
+            shutil.copy2(file, tmp_file)
+
             cmd = [
                 "whisply", "run",
-                "--files",      str(file),
+                "--files",      str(tmp_file),
                 "--output_dir", str(transcriptions_dir),
                 "--device",     device,
                 "--export",     export,
@@ -320,9 +327,6 @@ class Worker(QThread):
                 if num_speakers > 0:
                     cmd += ["--num_speakers", str(num_speakers)]
 
-            for tmp in file.parent.glob(f"{file.stem}*_converted.wav"):
-                tmp.unlink(missing_ok=True)
-
             returncode = -1
             try:
                 output_folder.mkdir(parents=True, exist_ok=True)
@@ -336,8 +340,7 @@ class Worker(QThread):
                 self._read_stdout()
                 returncode = self.current_process.wait()
             finally:
-                for tmp in file.parent.glob(f"{file.stem}*_converted.wav"):
-                    tmp.unlink(missing_ok=True)
+                shutil.rmtree(tmp_dir, ignore_errors=True)
                 self.current_process = None
 
             elapsed = _fmt(perf_counter() - file_start)
