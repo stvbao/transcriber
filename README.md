@@ -55,8 +55,17 @@ winget install Gyan.FFmpeg
 uv tool install whisply
 ```
 
-**4. Clone this repo and install dependencies**
+**4. Download this app and install dependencies**
 
+Option A — Download ZIP (no Git required):
+1. Click the green **Code** button on this page → **Download ZIP**
+2. Unzip the folder
+3. Open a terminal, navigate to the `app/` folder inside, and run:
+```bash
+uv sync
+```
+
+Option B — Clone with Git:
 ```bash
 git clone https://github.com/stvbao/transcriber
 cd transcriber/app
