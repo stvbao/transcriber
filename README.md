@@ -2,6 +2,8 @@
 
 A desktop transcription app for qualitative researchers. Built on [whisply](https://github.com/tsmdt/whisply) and OpenAI's **Whisper** model— fully offline, no cloud, no data leaving your machine.
 
+![Transcriber screenshot](screenshot.png)
+
 ## Features
 
 - **Desktop GUI** — no terminal needed after setup
