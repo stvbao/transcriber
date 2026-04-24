@@ -1,4 +1,3 @@
 #!/bin/bash
-cd "$(dirname "$0")"
-uv run python main.py &
-disown
+cd "$(dirname "$0")/app"
+uv run python main.py

@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/stvbao/.local/share/uv/tools/whisply/lib/python3.12/site-packages/**)",
+      "Bash(grep -rh \"\"pyannote/[a-zA-Z0-9@.-]*\"\" /Users/stvbao/.local/share/uv/tools/whisply/lib/python3.12/site-packages --include=*.py)",
+      "Bash(grep -h \"\"pyannote/ /Users/stvbao/.local/share/uv/tools/whisply/lib/python3.12/site-packages/pyannote/audio/pipelines/*.py)",
+      "Bash(git -C /Users/stvbao/Coding/#Tools/Transcriber status)",
+      "Bash(python3 -c \"import customtkinter; print\\('ok'\\)\")",
+      "Bash(python3 app.py)",
+      "Bash(kill %1)",
+      "Bash(python3.12 -m pip install customtkinter)",
+      "Bash(python3.12 -c \"import customtkinter; print\\('ok'\\)\")",
+      "Bash(python3.12 -m pip install customtkinter --break-system-packages)",
+      "Bash(/usr/bin/python3 -c \"import tkinter; print\\('ok'\\)\")",
+      "Bash(/Library/Developer/CommandLineTools/usr/bin/python3 -c \"import tkinter; print\\('ok'\\)\")",
+      "Bash(/usr/bin/python3 *)",
+      "Bash(uv venv *)",
+      "Bash(uv add *)",
+      "Bash(uv run *)",
+      "Bash(uv pip *)",
+      "Bash(.venv/bin/python app.py)",
+      "Bash(uv python *)",
+      "Bash(export TCL_LIBRARY=\"$HOME/.local/share/uv/python/cpython-3.12.12-macos-aarch64-none/lib/tcl9.0\")",
+      "Bash(bash run.sh)",
+      "Bash(uv remove *)",
+      "Bash(bash transcriber.command)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git rm *)",
+      "Bash(git mv *)"
+    ]
+  }
+}

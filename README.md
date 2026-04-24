@@ -57,7 +57,7 @@ uv tool install whisply
 
 ```bash
 git clone https://github.com/stvbao/transcriber
-cd transcriber
+cd transcriber/app
 uv sync
 ```
 
