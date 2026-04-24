@@ -77,8 +77,8 @@ Models are downloaded once on first use and cached locally — fully offline aft
 
 ## Known Issues
 
-**Windows CPU transcription fails (k2 missing)**
-whisply uses WhisperX on CPU, which requires a package called `k2` that does not install correctly on Windows.
+**Windows only — CPU transcription fails (k2 missing)**
+On Windows, whisply uses WhisperX on CPU, which requires a package called `k2` that does not install correctly on Windows. This does not affect Mac users.
 
 Workarounds:
 - Use an NVIDIA GPU and set device to `gpu` (if your computer does not have an NVIDIA GPU, there is currently no solution)
