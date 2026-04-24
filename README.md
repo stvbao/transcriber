@@ -25,33 +25,19 @@ Select your audio files, configure settings, and press Start. Transcriptions are
 
 ## Installation
 
-**1. Install uv**
+**1. Install dependencies**
 
-macOS:
+macOS (run each line in Terminal):
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
+brew install ffmpeg
+uv tool install whisply
 ```
 
-Windows:
+Windows (run each line in PowerShell):
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
-
-**2. Install ffmpeg**
-
-macOS:
-```bash
-brew install ffmpeg
-```
-
-Windows:
-```bash
 winget install Gyan.FFmpeg
-```
-
-**3. Install whisply**
-
-```bash
 uv tool install whisply
 ```
 
