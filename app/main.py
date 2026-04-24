@@ -320,6 +320,9 @@ class Worker(QThread):
                 if num_speakers > 0:
                     cmd += ["--num_speakers", str(num_speakers)]
 
+            for tmp in file.parent.glob(f"{file.stem}*_converted.wav"):
+                tmp.unlink(missing_ok=True)
+
             returncode = -1
             try:
                 output_folder.mkdir(parents=True, exist_ok=True)
