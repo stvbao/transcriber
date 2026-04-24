@@ -1,4 +1,5 @@
 import sys
+import os
 import subprocess
 import shutil
 from pathlib import Path
@@ -283,6 +284,7 @@ class Worker(QThread):
             self.done.emit()
             return
 
+        self.log.emit("─" * 40)
         self.log.emit(f"Found {len(files)} file(s) to process...")
         if model:
             self.log.emit(f"Model: {model}")
@@ -321,9 +323,12 @@ class Worker(QThread):
             returncode = -1
             try:
                 output_folder.mkdir(parents=True, exist_ok=True)
+                env = os.environ.copy()
+                env["PYTHONUTF8"] = "1"
                 self.current_process = subprocess.Popen(
                     cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                    text=True, encoding="utf-8", errors="replace", bufsize=0, cwd=str(output_folder),
+                    text=True, encoding="utf-8", errors="replace", bufsize=0,
+                    cwd=str(output_folder), env=env,
                 )
                 self._read_stdout()
                 returncode = self.current_process.wait()
