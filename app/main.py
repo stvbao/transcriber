@@ -318,7 +318,9 @@ class Worker(QThread):
                 cmd += ["--language", language]
             if model:
                 cmd += ["--model", model]
-            if export in {"all", "srt", "vtt", "webvtt"}:
+            # --subtitle forces WhisperX (needs k2) which breaks on Windows CPU.
+            # Only use it for MLX and CUDA where WhisperX works reliably.
+            if export in {"all", "srt", "vtt", "webvtt"} and device in {"mlx", "cuda"}:
                 cmd += ["--subtitle", "--subtitle_length", "5"]
             if translate:
                 cmd.append("--translate")
