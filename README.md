@@ -41,7 +41,7 @@ winget install Gyan.FFmpeg
 uv tool install whisply
 ```
 
-**4. Download this app and install dependencies**
+**2. Download this app and install dependencies**
 
 Option A — Download ZIP (no Git required):
 1. Click the green **Code** button on this page → **Download ZIP**
