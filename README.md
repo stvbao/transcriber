@@ -1,6 +1,6 @@
 # Transcriber
 
-A desktop transcription app for social scientists and qualitative researchers. Built on [whisply](https://github.com/tsmdt/whisply) and OpenAI's **Whisper large-v3-turbo**, it transcribes interviews, focus groups, and field recordings entirely on your own machine — no cloud, no data leaving your computer.
+A GUI transcription app for social scientists and qualitative researchers. Built on [whisply](https://github.com/tsmdt/whisply) and OpenAI's **Whisper large-v3-turbo**, it transcribes interviews, focus groups, and field recordings entirely on your own machine — no cloud, no data leaving your computer.
 
 Select your audio files, configure settings, and press Start. Transcriptions are saved to a folder of your choice. If you have multiple files, they are processed in one batch run.
 
