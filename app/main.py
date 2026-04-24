@@ -725,9 +725,10 @@ class MainWindow(QMainWindow):
 
         self._log(msg)
 
-        # Start pulsing immediately after model fetch completes
-        if "Fetching" in msg and "100%" in msg and self.worker and self.worker.isRunning():
-            self._silence_timer.start()
+        # Start pulsing after model fetch completes or when processing begins
+        if self.worker and self.worker.isRunning():
+            if ("Fetching" in msg and "100%" in msg) or "Processing" in msg:
+                self._silence_timer.start()
 
     def _start_pulsing(self):
         if self.worker and self.worker.isRunning():
