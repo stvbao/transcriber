@@ -75,21 +75,27 @@ Speaker annotation automatically labels each speaker (e.g. `SPEAKER_00`, `SPEAKE
 
 Models are downloaded once on first use and cached locally — fully offline after that.
 
-## Known Issues
-
-**Windows only — CPU transcription fails (k2 missing)**
-On Windows, whisply uses WhisperX on CPU, which requires a package called `k2` that does not install correctly on Windows. This does not affect Mac users.
-
-Workarounds:
-- Use an NVIDIA GPU and set device to `gpu` (if your computer does not have an NVIDIA GPU, there is currently no solution)
-- Use a Mac (MLX backend works out of the box)
-
 ## Data Privacy
 
 - Audio files never leave your machine
 - No API keys or cloud services used for transcription
 - No telemetry or usage data sent anywhere
 - HuggingFace is contacted once to download models — offline after that
+
+## Device Selection
+
+| Your hardware | Recommended device setting |
+|---|---|
+| Mac (M1–M5) | `mlx` |
+| Windows / Linux with NVIDIA GPU | `gpu` |
+| Windows / Linux, no NVIDIA GPU | `cpu` (see Known Issues) |
+
+## Known Issues
+
+**Windows only — CPU transcription fails (k2 missing)**
+Whisply uses WhisperX on CPU, which requires a package called `k2` that does not install correctly on Windows. The workaround is to use an NVIDIA GPU and set device to `gpu`. However, if your computer does not support using NVIDIA GPU, there is currently no solution
+
+For Mac users, MLX backend works out of the box.
 
 ## Credits
 
