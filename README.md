@@ -75,6 +75,15 @@ Speaker annotation automatically labels each speaker (e.g. `SPEAKER_00`, `SPEAKE
 
 Models are downloaded once on first use and cached locally — fully offline after that.
 
+## Known Issues
+
+**Windows CPU transcription fails (k2 missing)**
+whisply uses WhisperX on CPU, which requires a package called `k2` that does not install correctly on Windows.
+
+Workarounds:
+- Use an NVIDIA GPU and set device to `gpu` (if your computer does not have an NVIDIA GPU, there is currently no solution)
+- Use a Mac (MLX backend works out of the box)
+
 ## Data Privacy
 
 - Audio files never leave your machine
