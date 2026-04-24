@@ -330,9 +330,6 @@ class Worker(QThread):
             finally:
                 for tmp in file.parent.glob(f"{file.stem}*_converted.wav"):
                     tmp.unlink(missing_ok=True)
-                logs_dir = output_folder / "logs"
-                if logs_dir.is_dir():
-                    shutil.rmtree(logs_dir, ignore_errors=True)
                 self.current_process = None
 
             elapsed = _fmt(perf_counter() - file_start)
