@@ -87,3 +87,4 @@ Models are downloaded once on first use and cached locally — fully offline aft
 - [whisply](https://github.com/tsmdt/whisply) by [@tsmdt](https://github.com/tsmdt)
 - [Whisper](https://github.com/openai/whisper) by OpenAI
 - [pyannote.audio](https://github.com/pyannote/pyannote-audio) by pyannote
+- [noScribe](https://github.com/kaixxx/noScribe) by Kai Dröge — GUI design and aesthetics inspiration
