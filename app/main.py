@@ -376,8 +376,8 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Transcriber")
-        self.setMinimumSize(1000, 700)
-        self.resize(1000, 700)
+        self.setMinimumSize(1200, 700)
+        self.resize(1200, 700)
         self.worker          = None
         self._selected_files = []
         self._output_folder  = Path.home() / "Downloads"
