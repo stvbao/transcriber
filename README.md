@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> This project is deprecated and no longer maintained. It has been replaced by **[Scriber](https://github.com/stvbao/scriber)** — a rewritten version with a built-in CLI, no external dependencies, and Homebrew install support for macOS. Please use Scriber going forward.
+> This project is deprecated and no longer maintained. Unlike this app, which is a GUI wrapper around [whisply](https://github.com/tsmdt/whisply), **[Scriber](https://github.com/stvbao/scriber)** is a completely rewritten project with its own transcription pipeline, built-in CLI, no external dependencies, and Homebrew install support for macOS. Please use Scriber going forward.
 
 # Transcriber
 
