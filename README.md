@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This project is deprecated and no longer maintained. It has been replaced by **[Scriber](https://github.com/stvbao/scriber)** — a rewritten version with a built-in CLI, no external dependencies, and Homebrew install support for macOS. Please use Scriber going forward.
+
 # Transcriber
 
 A desktop transcription GUI for social scientists and qualitative researchers. Built on [whisply](https://github.com/tsmdt/whisply) and OpenAI's **Whisper large-v3-turbo**, it transcribes interviews, focus groups, and field recordings entirely on your own machine — no cloud, no data leaving your computer.
